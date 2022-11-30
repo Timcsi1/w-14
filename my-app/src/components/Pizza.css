@@ -5,6 +5,6 @@
   margin: 15px 15px 0 0;
 }
 
-.Pizza .fav {
+.Pizza.fav {
   border: 5px solid green;
 }
