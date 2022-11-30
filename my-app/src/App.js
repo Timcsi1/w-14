@@ -1,3 +1,4 @@
+import React from 'react';
 import "./App.css";
 import Pizzas from "./components/Pizzas";
 /*import Beers from "./components/Beers";

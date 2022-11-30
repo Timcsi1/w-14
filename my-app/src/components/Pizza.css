@@ -1,10 +1,10 @@
-.Pizza .favourite {
+.Pizza .favorite {
   width: 50px;
   position: relative;
   float: right;
   margin: 15px 15px 0 0;
 }
 
-.Pizza.favour {
+.Pizza .fav {
   border: 5px solid green;
 }

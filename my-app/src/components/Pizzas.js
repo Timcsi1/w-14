@@ -1,6 +1,6 @@
 import React from 'react'
 import {pizzas } from '../data/pizza_data'
-import (Pizza) from './Pizza'
+import Pizza from './Pizza'
 
 function Pizzas() {
   return (
