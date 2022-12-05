@@ -1,45 +1,34 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { useState, useEffect } from 'react'
 import './Pizza.css'
 
-function Pizza({name, id, picture, ingredients, price, setCount}) {
-   /* const pizzaName = pizzaData.name
-    const{name} = pizzaData /*destructing, ua. mint a felső*. megadhatjuk egyenként és a a sorredn is mindegy objektumnál*/
-  
-  const [isFavorite, setIsFavorite] = useState(false)
+function Pizza({id, name, picture, ingredients, price, setCount}) {
+  // const pizzaName = pizzaData.name
+  // const {name} = pizzaData
 
-  useEffect(function(){
-     console.log(isFavorite);
-  },[isFavorite])
+  const [isFavourite, setIsFavourite] = useState(false)
 
-    return (
-    <div className =
-    {"Pizza" +(isFavorite ? ' fav' : '')}>
-    <img 
-    onClick={() =>
-      setIsFavorite(!isFavorite)}/>
-    img src={
-        isFavorite
-        ? "https://www.iconpacks.net/icons/2/free-favourite-icon-2765-thumb.png"
-        : "https://as1.ftcdn.net/v2/jpg/01/09/84/42/1000_F_109844239_A7MdQSDf4y1H80cfvHZuSa0zKBkZ6857.jpg" } 
-        alt ="csillag" 
-    className="favorite" onClick={()=>{
-        setIsFavorite((oldValue)=> !oldValue)
-        console.log(isFavorite)
-    }}/>
+  useEffect(function() {
+    console.log(isFavourite)
+  }, [isFavourite])
 
-    <h1>{name} {isFavorite? 'Kedvenc': 'Fújjj'}</h1>
-    <p>{id}</p>
-    <h3>{ingredients}</h3>
-    <h2>{price}EUR</h2>
-   
-    <img src={"pictures/" + picture} alt="pizza_picture"/>
-    <button onClick={()=>{
-        setCount ((oldValue) => oldValue +1) 
-    }}>Kosárba</button>  
-    <hr/> 
+  return (
+    <div className={"Pizza" + (isFavourite ? " fav" : "")}>
+      <img src={isFavourite ? "https://as1.ftcdn.net/v2/jpg/01/09/84/42/1000_F_109844239_A7MdQSDf4y1H80cfvHZuSa0zKBkZ68S7.jpg" : "https://www.iconpacks.net/icons/2/free-favourite-icon-2765-thumb.png"} alt="csillag" className="favourite" onClick={() => {
+        setIsFavourite((oldValue) => !oldValue)
+        //setIsFavourite(!isFavourite)
+      }
+      } />
+      <p>Sorszám: {id}</p>
+      <h1>{name} {isFavourite ? "kedvenc" : "fúj"}</h1>
+      <h3>Összetevők: {ingredients}</h3>
+      <h2>{price} Ft</h2>
+      <img src={"pictures/" + picture} alt="pizza" />
+      <button onClick={() => {
+        setCount((oldValue) => oldValue + 1)
+      }}>Kosárba</button>
+      <hr />
     </div>
-  );
+  )
 }
 
-export default Pizza;
+export default Pizza

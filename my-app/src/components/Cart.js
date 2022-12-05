@@ -1,10 +1,10 @@
 import React from 'react'
 import'./Cart.css'
 
-function Cart({props}) {
-    //const{Count} = props
+function Cart({count}) {
+    //const{count} = props
   return (
-    <div className='Cart'>{Count}</div>
+    <div className='Cart'>{count}</div>
   )
 }
 
